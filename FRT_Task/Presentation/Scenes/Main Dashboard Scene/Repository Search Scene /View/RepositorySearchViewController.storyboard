@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GXH-LB-Q5e">
-                                <rect key="frame" x="0.0" y="104" width="414" height="709"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="704"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-0B-kAI" customClass="FloatingLabelInput" customModule="FRT_Task" customModuleProvider="target">
@@ -65,7 +65,7 @@
                             <constraint firstItem="g5O-0B-kAI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="B6b-6J-ptQ"/>
                             <constraint firstItem="RTT-Lp-N8F" firstAttribute="leading" secondItem="g5O-0B-kAI" secondAttribute="trailing" id="OKO-Gy-8AC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GXH-LB-Q5e" secondAttribute="bottom" id="bj8-55-Klv"/>
-                            <constraint firstItem="GXH-LB-Q5e" firstAttribute="top" secondItem="g5O-0B-kAI" secondAttribute="bottom" id="gd7-Oq-0kQ"/>
+                            <constraint firstItem="GXH-LB-Q5e" firstAttribute="top" secondItem="g5O-0B-kAI" secondAttribute="bottom" constant="5" id="gd7-Oq-0kQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RTT-Lp-N8F" secondAttribute="trailing" constant="24" id="lmb-yE-P6A"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GXH-LB-Q5e" secondAttribute="trailing" id="rsu-Z4-RDm"/>
                             <constraint firstItem="RTT-Lp-N8F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="zJm-C0-2lk"/>

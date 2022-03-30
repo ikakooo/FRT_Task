@@ -29,6 +29,11 @@
 		3B8EEFCD27F4E027007EA4F1 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFCB27F4E027007EA4F1 /* RepositoryCell.xib */; };
 		3B8EEFD027F4E084007EA4F1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFCF27F4E084007EA4F1 /* UITableViewCell+Extension.swift */; };
 		3B8EEFD227F4E0A4007EA4F1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFD127F4E0A3007EA4F1 /* UITableView+Extension.swift */; };
+		3B8EEFD427F4EFE4007EA4F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFD327F4EFE4007EA4F1 /* NetworkManager.swift */; };
+		3B8EEFD627F4F01B007EA4F1 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFD527F4F01B007EA4F1 /* URLExtensions.swift */; };
+		3B8EEFD827F4F0BE007EA4F1 /* RepositoryNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFD727F4F0BE007EA4F1 /* RepositoryNetworkManager.swift */; };
+		3B8EEFDC27F4F16A007EA4F1 /* RepositoryConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFDB27F4F16A007EA4F1 /* RepositoryConstants.swift */; };
+		3B8EEFDF27F4F3AC007EA4F1 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFDE27F4F3AC007EA4F1 /* RepositoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		3B8EEFCB27F4E027007EA4F1 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		3B8EEFCF27F4E084007EA4F1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		3B8EEFD127F4E0A3007EA4F1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		3B8EEFD327F4EFE4007EA4F1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3B8EEFD527F4F01B007EA4F1 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		3B8EEFD727F4F0BE007EA4F1 /* RepositoryNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryNetworkManager.swift; sourceTree = "<group>"; };
+		3B8EEFDB27F4F16A007EA4F1 /* RepositoryConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryConstants.swift; sourceTree = "<group>"; };
+		3B8EEFDE27F4F3AC007EA4F1 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,8 @@
 		3B8EEF9627F455D2007EA4F1 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3B8EEFDA27F4F13B007EA4F1 /* Domain */,
+				3B8EEFD927F4F12F007EA4F1 /* Contants */,
 				3B8EEFCE27F4E066007EA4F1 /* Extensions */,
 				3B8EEFA627F4597E007EA4F1 /* Dialog Alerts */,
 				3B8EEFA227F45944007EA4F1 /* Custom UI Components */,
@@ -164,6 +176,8 @@
 		3B8EEF9927F45618007EA4F1 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				3B8EEFD327F4EFE4007EA4F1 /* NetworkManager.swift */,
+				3B8EEFD727F4F0BE007EA4F1 /* RepositoryNetworkManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -319,8 +333,33 @@
 			children = (
 				3B8EEFCF27F4E084007EA4F1 /* UITableViewCell+Extension.swift */,
 				3B8EEFD127F4E0A3007EA4F1 /* UITableView+Extension.swift */,
+				3B8EEFD527F4F01B007EA4F1 /* URLExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3B8EEFD927F4F12F007EA4F1 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFDB27F4F16A007EA4F1 /* RepositoryConstants.swift */,
+			);
+			path = Contants;
+			sourceTree = "<group>";
+		};
+		3B8EEFDA27F4F13B007EA4F1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFDD27F4F393007EA4F1 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3B8EEFDD27F4F393007EA4F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFDE27F4F3AC007EA4F1 /* RepositoryModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,16 +437,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8EEFD827F4F0BE007EA4F1 /* RepositoryNetworkManager.swift in Sources */,
+				3B8EEFDF27F4F3AC007EA4F1 /* RepositoryModel.swift in Sources */,
 				3B8EEFBD27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift in Sources */,
 				3B8EEF9F27F45749007EA4F1 /* WelcomeViewController.swift in Sources */,
 				3B8EEFD227F4E0A4007EA4F1 /* UITableView+Extension.swift in Sources */,
 				3B8EEFB127F4B33A007EA4F1 /* MainDashboardTabBarController.swift in Sources */,
+				3B8EEFD427F4EFE4007EA4F1 /* NetworkManager.swift in Sources */,
+				3B8EEFDC27F4F16A007EA4F1 /* RepositoryConstants.swift in Sources */,
 				3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */,
 				3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */,
 				3B8EEFB627F4B952007EA4F1 /* RepositorySearchViewController.swift in Sources */,
 				3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */,
 				3B8EEFD027F4E084007EA4F1 /* UITableViewCell+Extension.swift in Sources */,
 				3B8EEFC827F4DEFC007EA4F1 /* RepositorySearchModelProtocol.swift in Sources */,
+				3B8EEFD627F4F01B007EA4F1 /* URLExtensions.swift in Sources */,
 				3B8EEFCC27F4E027007EA4F1 /* RepositoryCell.swift in Sources */,
 				3B8EEFC627F4DE50007EA4F1 /* RepositorySearchDataService.swift in Sources */,
 				3B8EEFA827F459A1007EA4F1 /* DialogAlertsForActions.swift in Sources */,

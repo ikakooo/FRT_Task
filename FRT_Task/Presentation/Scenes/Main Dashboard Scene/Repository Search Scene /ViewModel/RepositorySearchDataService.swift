@@ -30,6 +30,9 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
        // pages = viewModel.getPages()
         tableView.reloadData()
        // startTimer()
+        viewModel.getRepositoriesBy(text: "tic-tac-toe-ios-multiplayer-game"){ [weak self] repos in
+            print(repos)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
