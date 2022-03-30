@@ -12,18 +12,16 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onStartClick(_ sender: Any) {
+        let sb = UIStoryboard(name: "MainDashboardTabBarController", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainDashboardTabBarController")
+        
+        self.navigationController?.viewControllers.removeAll()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
-    */
 
 }

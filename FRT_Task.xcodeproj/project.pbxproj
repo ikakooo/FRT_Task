@@ -16,6 +16,12 @@
 		3B8EEFA127F45759007EA4F1 /* WelcomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA027F45759007EA4F1 /* WelcomeViewController.storyboard */; };
 		3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA327F45956007EA4F1 /* GradientView.swift */; };
 		3B8EEFA827F459A1007EA4F1 /* DialogAlertsForActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA727F459A1007EA4F1 /* DialogAlertsForActions.swift */; };
+		3B8EEFB127F4B33A007EA4F1 /* MainDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFB027F4B33A007EA4F1 /* MainDashboardTabBarController.swift */; };
+		3B8EEFB327F4B345007EA4F1 /* MainDashboardTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFB227F4B345007EA4F1 /* MainDashboardTabBarController.storyboard */; };
+		3B8EEFB627F4B952007EA4F1 /* RepositorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFB527F4B952007EA4F1 /* RepositorySearchViewController.swift */; };
+		3B8EEFB827F4B95F007EA4F1 /* RepositorySearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFB727F4B95F007EA4F1 /* RepositorySearchViewController.storyboard */; };
+		3B8EEFBD27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFBC27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift */; };
+		3B8EEFBF27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFBE27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		3B8EEFA027F45759007EA4F1 /* WelcomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeViewController.storyboard; sourceTree = "<group>"; };
 		3B8EEFA327F45956007EA4F1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		3B8EEFA727F459A1007EA4F1 /* DialogAlertsForActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAlertsForActions.swift; sourceTree = "<group>"; };
+		3B8EEFB027F4B33A007EA4F1 /* MainDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDashboardTabBarController.swift; sourceTree = "<group>"; };
+		3B8EEFB227F4B345007EA4F1 /* MainDashboardTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainDashboardTabBarController.storyboard; sourceTree = "<group>"; };
+		3B8EEFB527F4B952007EA4F1 /* RepositorySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchViewController.swift; sourceTree = "<group>"; };
+		3B8EEFB727F4B95F007EA4F1 /* RepositorySearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositorySearchViewController.storyboard; sourceTree = "<group>"; };
+		3B8EEFBC27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRepositoriesViewController.swift; sourceTree = "<group>"; };
+		3B8EEFBE27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StarredRepositoriesViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		3B8EEF9527F455C6007EA4F1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3B8EEFC227F4C88A007EA4F1 /* Repository Details Scene */,
+				3B8EEFA927F4729B007EA4F1 /* Main Dashboard Scene */,
 				3B8EEF9B27F45701007EA4F1 /* Welcome Scene */,
 			);
 			path = Scenes;
@@ -188,6 +202,90 @@
 			path = "Dialog Alerts";
 			sourceTree = "<group>";
 		};
+		3B8EEFA927F4729B007EA4F1 /* Main Dashboard Scene */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFBB27F4BA61007EA4F1 /* Starred Repositories Scene */,
+				3B8EEFB427F4B90B007EA4F1 /* Repository Search Scene  */,
+				3B8EEFAB27F4B1DD007EA4F1 /* View */,
+				3B8EEFAA27F4B1D8007EA4F1 /* ViewModel */,
+			);
+			path = "Main Dashboard Scene";
+			sourceTree = "<group>";
+		};
+		3B8EEFAA27F4B1D8007EA4F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B8EEFAB27F4B1DD007EA4F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFB027F4B33A007EA4F1 /* MainDashboardTabBarController.swift */,
+				3B8EEFB227F4B345007EA4F1 /* MainDashboardTabBarController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B8EEFB427F4B90B007EA4F1 /* Repository Search Scene  */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFBA27F4B972007EA4F1 /* View */,
+				3B8EEFB927F4B969007EA4F1 /* ViewModel */,
+			);
+			path = "Repository Search Scene ";
+			sourceTree = "<group>";
+		};
+		3B8EEFB927F4B969007EA4F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B8EEFBA27F4B972007EA4F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFB527F4B952007EA4F1 /* RepositorySearchViewController.swift */,
+				3B8EEFB727F4B95F007EA4F1 /* RepositorySearchViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B8EEFBB27F4BA61007EA4F1 /* Starred Repositories Scene */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFC127F4BABD007EA4F1 /* View */,
+				3B8EEFC027F4BAB8007EA4F1 /* ViewModel */,
+			);
+			path = "Starred Repositories Scene";
+			sourceTree = "<group>";
+		};
+		3B8EEFC027F4BAB8007EA4F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B8EEFC127F4BABD007EA4F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFBC27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift */,
+				3B8EEFBE27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B8EEFC227F4C88A007EA4F1 /* Repository Details Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Repository Details Scene";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,9 +344,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8EEFB327F4B345007EA4F1 /* MainDashboardTabBarController.storyboard in Resources */,
 				3B8EEFA127F45759007EA4F1 /* WelcomeViewController.storyboard in Resources */,
 				3B8EEF8B27F452F4007EA4F1 /* LaunchScreen.storyboard in Resources */,
+				3B8EEFBF27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard in Resources */,
 				3B8EEF8827F452F4007EA4F1 /* Assets.xcassets in Resources */,
+				3B8EEFB827F4B95F007EA4F1 /* RepositorySearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8EEFBD27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift in Sources */,
 				3B8EEF9F27F45749007EA4F1 /* WelcomeViewController.swift in Sources */,
+				3B8EEFB127F4B33A007EA4F1 /* MainDashboardTabBarController.swift in Sources */,
 				3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */,
 				3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */,
+				3B8EEFB627F4B952007EA4F1 /* RepositorySearchViewController.swift in Sources */,
 				3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */,
 				3B8EEFA827F459A1007EA4F1 /* DialogAlertsForActions.swift in Sources */,
 				3B8EEF8627F452F2007EA4F1 /* FRT_Task.xcdatamodeld in Sources */,
