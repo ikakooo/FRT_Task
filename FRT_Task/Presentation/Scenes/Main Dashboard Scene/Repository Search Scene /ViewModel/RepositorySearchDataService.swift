@@ -10,16 +10,23 @@ import UIKit
 class RepositorySearchDataService: NSObject, UITableViewDataSource {
     weak private var controller: UIViewController!
     weak private var tableView: UITableView!
+    weak private var searchInputFild: FloatingLabelInput!
     
     weak private var viewModel: RepositorySearchModelProtocol!
     
-    init(withController: UIViewController, with tableView: UITableView, viewModel: RepositorySearchModelProtocol) {
+    private var repositories = [Item](){
+        didSet{
+            tableView.reloadWithAnimation()
+        }
+    }
+    
+    init(withController: UIViewController, with tableView: UITableView,searchInputFild: FloatingLabelInput, viewModel: RepositorySearchModelProtocol) {
         super.init()
         
+        self.searchInputFild = searchInputFild
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
-       // self.tableView.isPagingEnabled = true
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.registerNib(class: RepositoryCell.self)
         
@@ -27,16 +34,15 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
     }
     
     func refresh() {
-       // pages = viewModel.getPages()
-        tableView.reloadData()
-       // startTimer()
-        viewModel.getRepositoriesBy(text: "tic-tac-toe-ios-multiplayer-game"){ [weak self] repos in
-            print(repos)
+        viewModel.getRepositoriesBy(text: searchInputFild.text ?? ""){ [weak self] repos in
+            DispatchQueue.main.async {
+            self?.repositories = repos.items?.compactMap { $0 } ?? []
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return repositories.count
     }
     
     
@@ -45,7 +51,7 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         
         let cell = tableView.deque(RepositoryCell.self, for: indexPath)
         
-        //cell.configure(with: cryptos[indexPath.row])
+        cell.configure(with: repositories[indexPath.row])
         
         return cell
     }

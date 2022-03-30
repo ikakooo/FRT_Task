@@ -23,14 +23,14 @@ class RepositorySearchViewController: UIViewController {
         unowned let vc = self
         
         viewModel = RepositorySearchModel()
-        ballanceDataService = RepositorySearchDataService(withController: vc, with: tableView, viewModel: viewModel)
+        ballanceDataService = RepositorySearchDataService(withController: vc, with: tableView,searchInputFild: searchInputFild, viewModel: viewModel)
     
         ballanceDataService.refresh()
     }
     
     
     @IBAction func searchButtonOnClick(_ sender: Any) {
-    
+        ballanceDataService.refresh()
     }
 
 }

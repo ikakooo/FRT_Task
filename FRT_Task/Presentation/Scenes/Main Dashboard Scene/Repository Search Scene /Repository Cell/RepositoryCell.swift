@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryCell: UITableViewCell {
     @IBOutlet weak var avatarIMG: UIImageView!
@@ -21,6 +22,12 @@ class RepositoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(with:Item){
+        nameLabel.text = with.owner?.login
+        repositoryNameLabel.text = with.name
+        avatarIMG.kf.setImage(with: URL(string: with.owner?.avatarURL ?? ""))
     }
     
 }
