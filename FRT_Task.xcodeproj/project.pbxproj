@@ -14,6 +14,8 @@
 		3B8EEF8B27F452F4007EA4F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEF8927F452F4007EA4F1 /* LaunchScreen.storyboard */; };
 		3B8EEF9F27F45749007EA4F1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEF9E27F45749007EA4F1 /* WelcomeViewController.swift */; };
 		3B8EEFA127F45759007EA4F1 /* WelcomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA027F45759007EA4F1 /* WelcomeViewController.storyboard */; };
+		3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA327F45956007EA4F1 /* GradientView.swift */; };
+		3B8EEFA827F459A1007EA4F1 /* DialogAlertsForActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEFA727F459A1007EA4F1 /* DialogAlertsForActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3B8EEF8C27F452F4007EA4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B8EEF9E27F45749007EA4F1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3B8EEFA027F45759007EA4F1 /* WelcomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeViewController.storyboard; sourceTree = "<group>"; };
+		3B8EEFA327F45956007EA4F1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		3B8EEFA727F459A1007EA4F1 /* DialogAlertsForActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAlertsForActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		3B8EEF9627F455D2007EA4F1 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3B8EEFA627F4597E007EA4F1 /* Dialog Alerts */,
+				3B8EEFA227F45944007EA4F1 /* Custom UI Components */,
 				3B8EEF9827F4560B007EA4F1 /* Managers */,
 			);
 			path = Infrastructure;
@@ -164,6 +170,22 @@
 				3B8EEFA027F45759007EA4F1 /* WelcomeViewController.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3B8EEFA227F45944007EA4F1 /* Custom UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFA327F45956007EA4F1 /* GradientView.swift */,
+			);
+			path = "Custom UI Components";
+			sourceTree = "<group>";
+		};
+		3B8EEFA627F4597E007EA4F1 /* Dialog Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EEFA727F459A1007EA4F1 /* DialogAlertsForActions.swift */,
+			);
+			path = "Dialog Alerts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +261,9 @@
 			files = (
 				3B8EEF9F27F45749007EA4F1 /* WelcomeViewController.swift in Sources */,
 				3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */,
+				3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */,
 				3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */,
+				3B8EEFA827F459A1007EA4F1 /* DialogAlertsForActions.swift in Sources */,
 				3B8EEF8627F452F2007EA4F1 /* FRT_Task.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
