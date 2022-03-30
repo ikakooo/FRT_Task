@@ -8,22 +8,29 @@
 import UIKit
 
 class RepositorySearchViewController: UIViewController {
-
+    @IBOutlet weak private var searchInputFild: FloatingLabelInput!
+    @IBOutlet weak private var tableView: UITableView!
+    
+    private var viewModel: RepositorySearchModelProtocol!
+    private var ballanceDataService: RepositorySearchDataService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureDataSource()
+        // Do any additional setup after loading the view.  RepositorySearchDataService
+    }
+    private func configureDataSource() {
+        unowned let vc = self
+        
+        viewModel = RepositorySearchModel()
+        ballanceDataService = RepositorySearchDataService(withController: vc, with: tableView, viewModel: viewModel)
+    
+        ballanceDataService.refresh()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func searchButtonOnClick(_ sender: Any) {
+    
     }
-    */
 
 }
