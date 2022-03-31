@@ -25,6 +25,7 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
     init(withController: UIViewController, with tableView: UITableView,searchInputFild: FloatingLabelInput, viewModel: RepositorySearchModelProtocol) {
         super.init()
         
+        self.controller = withController
         self.searchInputFild = searchInputFild
         self.tableView = tableView
         self.tableView.dataSource = self
@@ -41,8 +42,12 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         }
         viewModel.getRepositoriesBy(text: searchInputFild.text ?? "", page: "\(page)"){ [weak self] repos in
             DispatchQueue.main.async {
-            self?.repositories += repos.items?.compactMap { $0 } ?? []
-            self?.totalRepos = repos.totalCount ?? 0
+                if let repos = repos {
+                    self?.repositories += repos.items?.compactMap { $0 } ?? []
+                    self?.totalRepos = repos.totalCount ?? 0
+                }else {
+                    self?.controller.openAlert(title: "Internet Connection Error!!!", message: "", closeButtonTitle: "Try again"){ [weak self] in self?.refresh()}
+                }
             }
         }
     }

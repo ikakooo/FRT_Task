@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepositorySearchModelProtocol:AnyObject {
-    func getRepositoriesBy(text: String,page:String, completion: @escaping ((RepositoryModel) -> Void))
+    func getRepositoriesBy(text: String,page:String, completion: @escaping ((RepositoryModel?) -> Void))
 }
 
 final class RepositorySearchModel: RepositorySearchModelProtocol {
@@ -22,7 +22,7 @@ final class RepositorySearchModel: RepositorySearchModelProtocol {
         repositoryNetworkManager = RepositoryNetworkManager(networkManager: networkManager)
     }
     
-    func getRepositoriesBy(text: String,page:String, completion: @escaping ((RepositoryModel) -> Void)){
+    func getRepositoriesBy(text: String,page:String, completion: @escaping ((RepositoryModel?) -> Void)){
         repositoryNetworkManager.searchRepositories(with: text,page: page){ repos in
             completion(repos)
         }

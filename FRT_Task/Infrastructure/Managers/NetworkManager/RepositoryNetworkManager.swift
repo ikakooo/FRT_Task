@@ -16,7 +16,7 @@ class RepositoryNetworkManager {
         self.networkManager = networkManager
     }
     
-    func searchRepositories(with text:String,page:String, completion: @escaping ((RepositoryModel) -> Void)) {
+    func searchRepositories(with text:String,page:String, completion: @escaping ((RepositoryModel?) -> Void)) {
         let queries = ["q": text,
                        "page": page,
                        "per_page":"1000"]
@@ -27,6 +27,7 @@ class RepositoryNetworkManager {
                 completion(apiResponse)
             case .failure(let error):
                 print("\(error) ikakooooooooo")
+                completion(nil)
             }
         }
     }
