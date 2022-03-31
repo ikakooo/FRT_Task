@@ -12,7 +12,7 @@ class RepositorySearchViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     
     private var viewModel: RepositorySearchModelProtocol!
-    private var ballanceDataService: RepositorySearchDataService!
+    private var repositorySearchDataService: RepositorySearchDataService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,14 @@ class RepositorySearchViewController: UIViewController {
         unowned let vc = self
         
         viewModel = RepositorySearchModel()
-        ballanceDataService = RepositorySearchDataService(withController: vc, with: tableView,searchInputFild: searchInputFild, viewModel: viewModel)
+        repositorySearchDataService = RepositorySearchDataService(withController: vc, with: tableView,searchInputFild: searchInputFild, viewModel: viewModel)
     
-        ballanceDataService.refresh()
+        repositorySearchDataService.refresh()
     }
     
     
     @IBAction func searchButtonOnClick(_ sender: Any) {
-        ballanceDataService.refresh()
+        repositorySearchDataService.refresh(newSearch: true)
     }
 
 }

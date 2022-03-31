@@ -13,6 +13,8 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
     weak private var searchInputFild: FloatingLabelInput!
     
     weak private var viewModel: RepositorySearchModelProtocol!
+    private var page = 1
+    private var totalRepos = 0
     
     private var repositories = [Item](){
         didSet{
@@ -33,10 +35,14 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         self.viewModel = viewModel
     }
     
-    func refresh() {
-        viewModel.getRepositoriesBy(text: searchInputFild.text ?? ""){ [weak self] repos in
+    func refresh(newSearch:Bool = false) {
+        if newSearch {
+            repositories.removeAll()
+        }
+        viewModel.getRepositoriesBy(text: searchInputFild.text ?? "", page: "\(page)"){ [weak self] repos in
             DispatchQueue.main.async {
-            self?.repositories = repos.items?.compactMap { $0 } ?? []
+            self?.repositories += repos.items?.compactMap { $0 } ?? []
+            self?.totalRepos = repos.totalCount ?? 0
             }
         }
     }
@@ -52,7 +58,10 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         let cell = tableView.deque(RepositoryCell.self, for: indexPath)
         
         cell.configure(with: repositories[indexPath.row])
-        
+        if indexPath.row == repositories.count-5 && totalRepos > repositories.count {
+            page+=1
+            refresh()
+        }
         return cell
     }
 }
