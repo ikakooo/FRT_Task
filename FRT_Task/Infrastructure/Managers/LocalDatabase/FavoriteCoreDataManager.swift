@@ -110,4 +110,28 @@ class FavoriteCoreDataManager {
         }
     }
     
+    
+    func tryFetch(repo:Item)->Bool{
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        print("Fetching Data..")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try managedContext.fetch(request)
+            for data in result as! [NSManagedObject] {
+                let fullName = data.value(forKey: "fullName") as? String
+               
+                if fullName == repo.fullName {return true}
+            }
+        } catch {
+            print("Fetching data Failed")
+        }
+        return false
+    }
 }

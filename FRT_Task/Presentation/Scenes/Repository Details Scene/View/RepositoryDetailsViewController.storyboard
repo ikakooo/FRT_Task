@@ -50,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="50" id="gxq-qi-OR9"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
                                 <connections>
                                     <action selector="onStarRepositoryClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b4B-Hd-iyw"/>
                                 </connections>
@@ -79,6 +79,7 @@
                     <connections>
                         <outlet property="dataLabel" destination="vVE-FY-yDk" id="9UK-30-VVn"/>
                         <outlet property="descriptionLabel" destination="GSg-QS-ino" id="3UD-04-uSF"/>
+                        <outlet property="favoriteButton" destination="6bA-AT-oSh" id="cwc-EI-hyh"/>
                         <outlet property="languageLabel" destination="YUK-fx-o4h" id="2VI-sD-QoD"/>
                     </connections>
                 </viewController>
@@ -106,7 +107,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

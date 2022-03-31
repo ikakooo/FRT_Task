@@ -11,11 +11,21 @@ class RepositoryDetailsViewController: UIViewController {
     @IBOutlet weak private var dataLabel: UILabel!
     @IBOutlet weak private var languageLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
+    @IBOutlet weak private var favoriteButton: UIButton!
     
     var detailingRepository: (() -> Item?)?
+    
+    var isFavorite = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let repo = detailingRepository?() else { dismiss(animated: true, completion: nil); return}
+        
+        if FavoriteCoreDataManager.shared.tryFetch(repo: repo) {
+            isFavorite.toggle()
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
         configureDataSource()
     }
     
@@ -34,8 +44,17 @@ class RepositoryDetailsViewController: UIViewController {
     }
     
     @IBAction func onStarRepositoryClick(_ sender: Any) {
-        FavoriteCoreDataManager.shared.saveFavorite(info: (detailingRepository?())!)
-       print( FavoriteCoreDataManager.shared.tryFetchAllFavorites())
+        guard let info = (detailingRepository?()) else { return }
+        
+        if isFavorite {
+            FavoriteCoreDataManager.shared.deleteFavorite(repo: info)
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            isFavorite.toggle()
+        }else{
+            FavoriteCoreDataManager.shared.saveFavorite(info: info )
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            isFavorite.toggle()
+        }
     }
     
 }
