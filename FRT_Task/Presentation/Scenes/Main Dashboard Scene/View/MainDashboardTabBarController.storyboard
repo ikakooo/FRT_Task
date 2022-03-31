@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RepositorySearchViewController-->
+        <!--RepositorySearchNavigationController-->
         <scene sceneID="cex-Cf-B9V">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RepositorySearchViewController" storyboardName="RepositorySearchViewController" referencedIdentifier="RepositorySearchViewController" id="4a7-BX-xEy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="RepositorySearchNavigationController" storyboardName="RepositorySearchViewController" referencedIdentifier="RepositorySearchNavigationController" id="4a7-BX-xEy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ev3-1N-33C"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwG-bp-i3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -48,6 +48,7 @@ struct Item: Codable {
     let issuesURL, pullsURL, milestonesURL, notificationsURL: String?
     let labelsURL, releasesURL: String?
     let deploymentsURL: String?
+    let createdAt:String?
     let gitURL, sshURL: String?
     let cloneURL: String?
     let svnURL: String?
@@ -112,6 +113,7 @@ struct Item: Codable {
         case labelsURL = "labels_url"
         case releasesURL = "releases_url"
         case deploymentsURL = "deployments_url"
+        case createdAt = "created_at"
         case gitURL = "git_url"
         case sshURL = "ssh_url"
         case cloneURL = "clone_url"

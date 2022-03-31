@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2D0F8427F5BA2F002984FE /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8327F5BA2F002984FE /* RepositoryDetailsViewController.swift */; };
+		3B2D0F8627F5BA3A002984FE /* RepositoryDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8527F5BA3A002984FE /* RepositoryDetailsViewController.storyboard */; };
+		3B2D0F8A27F5BB46002984FE /* RepositorySearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8927F5BB46002984FE /* RepositorySearchNavigationController.swift */; };
+		3B2D0F8C27F624B0002984FE /* FavoriteCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8B27F624B0002984FE /* FavoriteCoreDataManager.swift */; };
 		3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEF7B27F452F2007EA4F1 /* AppDelegate.swift */; };
 		3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEF7D27F452F2007EA4F1 /* SceneDelegate.swift */; };
 		3B8EEF8627F452F2007EA4F1 /* FRT_Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EEF8427F452F2007EA4F1 /* FRT_Task.xcdatamodeld */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B2D0F8327F5BA2F002984FE /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
+		3B2D0F8527F5BA3A002984FE /* RepositoryDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailsViewController.storyboard; sourceTree = "<group>"; };
+		3B2D0F8927F5BB46002984FE /* RepositorySearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchNavigationController.swift; sourceTree = "<group>"; };
+		3B2D0F8B27F624B0002984FE /* FavoriteCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoreDataManager.swift; sourceTree = "<group>"; };
 		3B8EEF7827F452F2007EA4F1 /* FRT_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRT_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8EEF7B27F452F2007EA4F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B8EEF7D27F452F2007EA4F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B2D0F8727F5BA45002984FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B2D0F8827F5BA4A002984FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B2D0F8327F5BA2F002984FE /* RepositoryDetailsViewController.swift */,
+				3B2D0F8527F5BA3A002984FE /* RepositoryDetailsViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3B8EEF6F27F452F2007EA4F1 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				3B8EEF8427F452F2007EA4F1 /* FRT_Task.xcdatamodeld */,
+				3B2D0F8B27F624B0002984FE /* FavoriteCoreDataManager.swift */,
 			);
 			path = LocalDatabase;
 			sourceTree = "<group>";
@@ -285,6 +310,7 @@
 			children = (
 				3B8EEFB527F4B952007EA4F1 /* RepositorySearchViewController.swift */,
 				3B8EEFB727F4B95F007EA4F1 /* RepositorySearchViewController.storyboard */,
+				3B2D0F8927F5BB46002984FE /* RepositorySearchNavigationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +343,8 @@
 		3B8EEFC227F4C88A007EA4F1 /* Repository Details Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3B2D0F8827F5BA4A002984FE /* View */,
+				3B2D0F8727F5BA45002984FE /* ViewModel */,
 			);
 			path = "Repository Details Scene";
 			sourceTree = "<group>";
@@ -434,6 +462,7 @@
 				3B8EEF8B27F452F4007EA4F1 /* LaunchScreen.storyboard in Resources */,
 				3B8EEFBF27F4BA8C007EA4F1 /* StarredRepositoriesViewController.storyboard in Resources */,
 				3B8EEF8827F452F4007EA4F1 /* Assets.xcassets in Resources */,
+				3B2D0F8627F5BA3A002984FE /* RepositoryDetailsViewController.storyboard in Resources */,
 				3B8EEFB827F4B95F007EA4F1 /* RepositorySearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8EEFD827F4F0BE007EA4F1 /* RepositoryNetworkManager.swift in Sources */,
+				3B2D0F8C27F624B0002984FE /* FavoriteCoreDataManager.swift in Sources */,
 				3B8EEFDF27F4F3AC007EA4F1 /* RepositoryModel.swift in Sources */,
 				3B8EEFBD27F4BA82007EA4F1 /* StarredRepositoriesViewController.swift in Sources */,
 				3B8EEF9F27F45749007EA4F1 /* WelcomeViewController.swift in Sources */,
@@ -454,11 +484,13 @@
 				3B8EEFD427F4EFE4007EA4F1 /* NetworkManager.swift in Sources */,
 				3B8EEFDC27F4F16A007EA4F1 /* RepositoryConstants.swift in Sources */,
 				3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */,
+				3B2D0F8A27F5BB46002984FE /* RepositorySearchNavigationController.swift in Sources */,
 				3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */,
 				3B8EEFB627F4B952007EA4F1 /* RepositorySearchViewController.swift in Sources */,
 				3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */,
 				3B8EEFD027F4E084007EA4F1 /* UITableViewCell+Extension.swift in Sources */,
 				3B8EEFC827F4DEFC007EA4F1 /* RepositorySearchModelProtocol.swift in Sources */,
+				3B2D0F8427F5BA2F002984FE /* RepositoryDetailsViewController.swift in Sources */,
 				3B8EEFD627F4F01B007EA4F1 /* URLExtensions.swift in Sources */,
 				3B8EEFCC27F4E027007EA4F1 /* RepositoryCell.swift in Sources */,
 				3B8EEFC627F4DE50007EA4F1 /* RepositorySearchDataService.swift in Sources */,

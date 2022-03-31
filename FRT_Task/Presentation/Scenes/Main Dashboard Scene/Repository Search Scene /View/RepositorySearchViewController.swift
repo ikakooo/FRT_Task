@@ -17,7 +17,7 @@ class RepositorySearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
-        // Do any additional setup after loading the view.  
+        // Do any additional setup after loading the view.   RepositorySearchNavigationController
     }
     private func configureDataSource() {
         unowned let vc = self
