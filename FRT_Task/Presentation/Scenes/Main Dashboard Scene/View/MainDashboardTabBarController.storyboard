@@ -16,10 +16,10 @@
             </objects>
             <point key="canvasLocation" x="1717" y="93"/>
         </scene>
-        <!--StarredRepositoriesViewController-->
+        <!--StarredRepositoriesNavigationController-->
         <scene sceneID="jzK-uP-o7Z">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StarredRepositoriesViewController" storyboardName="StarredRepositoriesViewController" referencedIdentifier="StarredRepositoriesViewController" id="LSw-zU-OO0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="StarredRepositoriesNavigationController" storyboardName="StarredRepositoriesViewController" referencedIdentifier="StarredRepositoriesNavigationController" id="LSw-zU-OO0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="q0t-HF-yqr"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fj-99-NKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

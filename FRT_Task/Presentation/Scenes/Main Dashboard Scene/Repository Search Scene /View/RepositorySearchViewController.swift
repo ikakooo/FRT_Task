@@ -32,5 +32,9 @@ class RepositorySearchViewController: UIViewController {
     @IBAction func searchButtonOnClick(_ sender: Any) {
         repositorySearchDataService.refresh(newSearch: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        repositorySearchDataService.refresh(newSearch: true)
+    }
 
 }

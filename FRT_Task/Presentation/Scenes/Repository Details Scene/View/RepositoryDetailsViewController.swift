@@ -34,6 +34,8 @@ class RepositoryDetailsViewController: UIViewController {
     }
     
     @IBAction func onStarRepositoryClick(_ sender: Any) {
+        FavoriteCoreDataManager.shared.saveFavorite(info: (detailingRepository?())!)
+       print( FavoriteCoreDataManager.shared.tryFetchAllFavorites())
     }
     
 }
