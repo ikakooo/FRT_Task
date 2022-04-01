@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B05DB5527F6F9000087CE81 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 3B05DB5427F6F9000087CE81 /* SkeletonView */; };
+		3B05DB5A27F6FC1A0087CE81 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05DB5927F6FC1A0087CE81 /* UIView+Extensions.swift */; };
 		3B2D0F8427F5BA2F002984FE /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8327F5BA2F002984FE /* RepositoryDetailsViewController.swift */; };
 		3B2D0F8627F5BA3A002984FE /* RepositoryDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8527F5BA3A002984FE /* RepositoryDetailsViewController.storyboard */; };
 		3B2D0F8A27F5BB46002984FE /* RepositorySearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D0F8927F5BB46002984FE /* RepositorySearchNavigationController.swift */; };
@@ -45,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B05DB5927F6FC1A0087CE81 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3B2D0F8327F5BA2F002984FE /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
 		3B2D0F8527F5BA3A002984FE /* RepositoryDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailsViewController.storyboard; sourceTree = "<group>"; };
 		3B2D0F8927F5BB46002984FE /* RepositorySearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchNavigationController.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B05DB5527F6F9000087CE81 /* SkeletonView in Frameworks */,
 				3B8EEFE227F50BCF007EA4F1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +377,7 @@
 				3B8EEFCF27F4E084007EA4F1 /* UITableViewCell+Extension.swift */,
 				3B8EEFD127F4E0A3007EA4F1 /* UITableView+Extension.swift */,
 				3B8EEFD527F4F01B007EA4F1 /* URLExtensions.swift */,
+				3B05DB5927F6FC1A0087CE81 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 			name = FRT_Task;
 			packageProductDependencies = (
 				3B8EEFE127F50BCF007EA4F1 /* Kingfisher */,
+				3B05DB5427F6F9000087CE81 /* SkeletonView */,
 			);
 			productName = FRT_Task;
 			productReference = 3B8EEF7827F452F2007EA4F1 /* FRT_Task.app */;
@@ -450,6 +456,7 @@
 			mainGroup = 3B8EEF6F27F452F2007EA4F1;
 			packageReferences = (
 				3B8EEFE027F50BCF007EA4F1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3B05DB5327F6F9000087CE81 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 3B8EEF7927F452F2007EA4F1 /* Products */;
 			projectDirPath = "";
@@ -495,6 +502,7 @@
 				3B8EEFDC27F4F16A007EA4F1 /* RepositoryConstants.swift in Sources */,
 				3B8EEF7C27F452F2007EA4F1 /* AppDelegate.swift in Sources */,
 				3B2D0F8A27F5BB46002984FE /* RepositorySearchNavigationController.swift in Sources */,
+				3B05DB5A27F6FC1A0087CE81 /* UIView+Extensions.swift in Sources */,
 				3B8EEFA427F45956007EA4F1 /* GradientView.swift in Sources */,
 				3B8EEFB627F4B952007EA4F1 /* RepositorySearchViewController.swift in Sources */,
 				3B8EEF7E27F452F2007EA4F1 /* SceneDelegate.swift in Sources */,
@@ -722,6 +730,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3B05DB5327F6F9000087CE81 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.9.0;
+			};
+		};
 		3B8EEFE027F50BCF007EA4F1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -733,6 +749,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3B05DB5427F6F9000087CE81 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B05DB5327F6F9000087CE81 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		3B8EEFE127F50BCF007EA4F1 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3B8EEFE027F50BCF007EA4F1 /* XCRemoteSwiftPackageReference "Kingfisher" */;

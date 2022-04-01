@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SkeletonView
 
-class RepositorySearchDataService: NSObject, UITableViewDataSource {
+class RepositorySearchDataService: NSObject, SkeletonTableViewDataSource {
     weak private var controller: UIViewController!
     weak private var tableView: UITableView!
     weak private var searchInputFild: FloatingLabelInput!
@@ -18,6 +19,8 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
     
     private var repositories = [Item](){
         didSet{
+            tableView.stopSkeletonAnimation()
+            tableView.hideSkeleton()
             tableView.reloadWithAnimation()
         }
     }
@@ -32,6 +35,8 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.registerNib(class: RepositoryCell.self)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 60
         
         self.viewModel = viewModel
     }
@@ -40,8 +45,15 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         if newSearch {
             repositories.removeAll()
         }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.mySkeletonAnimation()
+            self?.tableView.reloadData()
+        }
+    
+        
         viewModel.getRepositoriesBy(text: searchInputFild.text ?? "", page: "\(page)"){ [weak self] repos in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 if let repos = repos {
                     self?.repositories += repos.items?.compactMap { $0 } ?? []
                     self?.totalRepos = repos.totalCount ?? 0
@@ -50,6 +62,21 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
                 }
             }
         }
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        RepositoryCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        let cell = skeletonView.deque(RepositoryCell.self, for: indexPath)
+        return cell
+    }
+    func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
+        let cell = cell as? RepositoryCell
+        cell?.avatarIMG.mySkeletonAnimation()
+        cell?.nameLabel.mySkeletonAnimation()
+        cell?.repositoryNameLabel.mySkeletonAnimation()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,10 +90,12 @@ class RepositorySearchDataService: NSObject, UITableViewDataSource {
         let cell = tableView.deque(RepositoryCell.self, for: indexPath)
         
         cell.configure(with: repositories[indexPath.row])
-        if indexPath.row == repositories.count-5 && totalRepos > repositories.count {
+        
+        if indexPath.row == repositories.count-1 && totalRepos > repositories.count {
             page+=1
             refresh()
         }
+        
         return cell
     }
 }

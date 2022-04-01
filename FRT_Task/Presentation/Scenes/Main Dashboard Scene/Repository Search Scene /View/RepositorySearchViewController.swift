@@ -36,5 +36,12 @@ class RepositorySearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         repositorySearchDataService.refresh(newSearch: true)
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        tableView.isSkeletonable = true
+//        tableView.mySkeletonAnimation()
+//        tableView.reloadData()
+//    }
 
 }
