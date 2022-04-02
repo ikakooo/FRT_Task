@@ -17,7 +17,6 @@ class StarredRepositoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
-        // Do any additional setup after loading the view.  StarredRepositoriesModelProtocol
     }
     
     private func configureDataSource() {

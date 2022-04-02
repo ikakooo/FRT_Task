@@ -17,7 +17,6 @@ class RepositorySearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
-        // Do any additional setup after loading the view.   RepositorySearchNavigationController
     }
     private func configureDataSource() {
         unowned let vc = self
@@ -28,7 +27,6 @@ class RepositorySearchViewController: UIViewController {
         repositorySearchDataService.refresh()
     }
     
-    
     @IBAction func searchButtonOnClick(_ sender: Any) {
         repositorySearchDataService.refresh(newSearch: true)
     }
@@ -36,12 +34,5 @@ class RepositorySearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         repositorySearchDataService.refresh(newSearch: true)
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        tableView.isSkeletonable = true
-//        tableView.mySkeletonAnimation()
-//        tableView.reloadData()
-//    }
 
 }

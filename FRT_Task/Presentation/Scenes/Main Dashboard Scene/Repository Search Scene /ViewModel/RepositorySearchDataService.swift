@@ -44,11 +44,10 @@ class RepositorySearchDataService: NSObject, SkeletonTableViewDataSource {
     func refresh(newSearch:Bool = false) {
         if newSearch {
             repositories.removeAll()
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.mySkeletonAnimation()
-            self?.tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.mySkeletonAnimation()
+                self?.tableView.reloadData()
+            }
         }
     
         
@@ -82,8 +81,6 @@ class RepositorySearchDataService: NSObject, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories.count
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
