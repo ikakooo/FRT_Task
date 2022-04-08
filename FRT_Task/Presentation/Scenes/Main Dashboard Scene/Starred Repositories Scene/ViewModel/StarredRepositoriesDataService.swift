@@ -57,8 +57,8 @@ class StarredRepositoriesDataService: NSObject, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "RepositoryDetailsViewController", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "RepositoryDetailsViewController") as? RepositoryDetailsViewController else { return }
-        
-        vc.detailingRepository = { [weak self] in  return self?.repositories[indexPath.row]}
+        unowned let ds = self
+        vc.detailingRepository = ds.repositories[indexPath.row]
         
         controller.navigationController?.pushViewController(vc, animated: true)
     }
