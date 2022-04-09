@@ -32,7 +32,7 @@ class RepositorySearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        repositorySearchDataService.refresh(newSearch: true)
+        repositorySearchDataService.refresh()
     }
 
 }

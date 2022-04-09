@@ -24,7 +24,32 @@ class RepositoryCell: UITableViewCell {
     func configure(with:Item){
         nameLabel.text = with.owner?.login
         repositoryNameLabel.text = with.name
-        avatarIMG.kf.setImage(with: URL(string: with.owner?.avatarURL ?? ""))
+        //avatarIMG.kf.setImage(with: URL(string: with.owner?.avatarURL ?? ""))
+        loadIMGFromInternet(ImgURL: with.owner?.avatarURL ?? "")
+    }
+    
+    func loadIMGFromInternet(ImgURL:String){
+        let url = URL(string: ImgURL)
+        let processor = DownsamplingImageProcessor(size: avatarIMG.bounds.size)
+                     |> RoundCornerImageProcessor(cornerRadius: 20)
+        avatarIMG.kf.indicatorType = .activity
+        avatarIMG.kf.setImage(
+            with: url,
+            placeholder: nil,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        { result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
     }
     
 }

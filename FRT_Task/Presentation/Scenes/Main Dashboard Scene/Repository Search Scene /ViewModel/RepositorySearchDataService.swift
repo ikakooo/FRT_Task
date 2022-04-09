@@ -68,11 +68,11 @@ class RepositorySearchDataService: NSObject, SkeletonTableViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
-        let cell = skeletonView.deque(RepositoryCell.self, for: indexPath)
+        unowned  let cell = skeletonView.deque(RepositoryCell.self, for: indexPath)
         return cell
     }
     func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
-        let cell = cell as? RepositoryCell
+       unowned let cell = cell as? RepositoryCell
         cell?.avatarIMG.mySkeletonAnimation()
         cell?.nameLabel.mySkeletonAnimation()
         cell?.repositoryNameLabel.mySkeletonAnimation()
@@ -84,7 +84,7 @@ class RepositorySearchDataService: NSObject, SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.deque(RepositoryCell.self, for: indexPath)
+        unowned let cell = tableView.deque(RepositoryCell.self, for: indexPath)
         
         cell.configure(with: repositories[indexPath.row])
         
